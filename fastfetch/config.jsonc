@@ -1,112 +1,86 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "type": "builtin",
-        "height": 15,
-        "width": 30,
-        "color": {
-            "1": "#69ffff",
-            "2": "#69ffff",
-        },
-        "padding": {
-            "top": 5,
-            "left": 3
-        }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "display": {
+    "key": {
+      "width": 10
     },
-    "modules": [
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
-        },
-        {
-            "type": "host",
-            "key": " PC",
-            "keyColor": "green"
-        },
-        {
-            "type": "cpu",
-            "key": "│ ├",
-            "keyColor": "green"
-        },
-        {
-            "type": "gpu",
-            "key": "│ ├󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "memory",
-            "key": "│ ├󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "disk",
-            "key": "└ └",
-            "keyColor": "green"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
-        },
-        {
-            "type": "os",
-            "key": " OS",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "kernel",
-            "key": "│ ├",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "bios",
-            "key": "│ ├",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "packages",
-            "key": "│ ├󰏖",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "shell",
-            "key": "└ └",
-            "keyColor": "yellow"
-        },
-    
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌────────────────────Uptime / Age ────────────────────┐"
-        },
-        {
-            "type": "command",
-            "key": "  OS Age ",
-            "keyColor": "magenta",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-        },
-        {
-            "type": "uptime",
-            "key": "  Uptime ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "datetime",
-            "key": "  DateTime ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└─────────────────────────────────────────────────────┘"
-        }
-	    ]
+    "separator": ""
+  },
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/WhiteHouse.txt",
+    "color": {
+      "1": "#ccccff",
+      "2": "#c6d2ff",
+      "3": "#c1d7ff",
+      "4": "#bedcff",
+      "5": "#bde0fe"
+    },
+    "padding": {
+      "top": 1,
+      "left": 1
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "command",
+      "key": "󰀄 USER",
+      "keyColor": "#ccccff",
+      "text": "echo $USER@$(hostnamectl hostname)"
+    },
+    {
+      "type": "os",
+      "key": "󰣇 OS",
+      "keyColor": "#c9cfff",
+      "format": "{name} {version-id}"
+    },
+    {
+      "type": "command",
+      "key": "󰌽 KER",
+      "keyColor": "#c6d2ff",
+      "text": "echo $(uname -r | cut -d- -f1) $(uname -m)"
+    },
+    {
+      "type": "packages",
+      "key": "󰏗 PKG",
+      "keyColor": "#c4d4ff",
+      "format": "{all}"
+    },
+    {
+      "type": "terminal",
+      "key": "󰆍 TERM",
+      "keyColor": "#c1d7ff",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "shell",
+      "key": "󰞷 SH",
+      "keyColor": "#c0d9ff",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "uptime",
+      "keyColor": "#bedcff",
+      "key": "󰥔 UP"
+    },
+    {
+      "type": "memory",
+      "key": "󰍛 RAM",
+      "keyColor": "#bddeff",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "folders": "/",
+      "key": "󰋊 SSD",
+      "keyColor": "#bde0fe",
+      "format": "{size-used} / {size-total} ({size-percentage})"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m \u001b[91m \u001b[92m \u001b[93m \u001b[94m \u001b[95m \u001b[96m \u001b[97m"
+    },
+    "break"
+  ]
 }

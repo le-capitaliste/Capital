@@ -5,6 +5,7 @@ dir="$HOME/Wallpapers"
 SELECTED=$(find "$dir" -type f \( \
   -iname "*.jpg" -o \
   -iname "*.png" -o \
+  -iname "*.gif" -o \
   -iname "*.jpeg" \
   \) | wofi --dmenu --prompt "Choose Wallpaper")
 

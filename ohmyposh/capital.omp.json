@@ -39,7 +39,7 @@
         {
           "type": "path",
           "style": "powerline",
-          "foreground": "#69ffff",
+          "foreground": "#ccccff",
           "options": {
             "style": "agnoster_full",
             "home_icon": "home",
